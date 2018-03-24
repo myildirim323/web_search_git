@@ -1,11 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-centered">
+      <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+      <h3>Users</h3>
+      <%= form_tag("/find_user", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:name) %>
+        <%= submit_tag("Search") %>
+      <% end %>
 
-<%= form_tag("/find_user", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:name) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-<%= link_to 'All Users', all_users_path %>
+    <div class="btn btn-light">
+      <%= link_to "All Users", all_users_path, :class => "btn"%>
+    </div>
+    </div>
+  </div>
+</div>
