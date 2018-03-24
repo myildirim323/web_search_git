@@ -4,17 +4,27 @@ class UsersController < ApplicationController
   def find_user
     name = params[:name]
     response = RestClient.get('https://api.github.com/search/users?q='+name, headers={})
-    user = JSON.parse(response)
-    if user["total_total"] != 0
-      user = User.find_by(name: name)
-      if user
-        user.search_count +=1
-        user.save
+    objArray = JSON.parse(response.body)
+    if objArray["total_count"] != 0
+      @user = User.find_by(name: name)
+      if @user
+        @user.search_count += 1
+        @user.save
+        flash[:notice] = 'Kullanıcı var.'
+        redirect_to users_path
       else
-        User.create(name: name)
+        @user = User.create(name: name, search_count: 1)
+        flash[:notice] = 'Yeni arama sonucu sisteme eklendi.'
+        redirect_to users_path
       end
+    else
+      flash[:notice] = 'Böyle bir kullanıcı yok'
+      redirect_to users_path
     end
-    redirect_to users_path
+  end
+
+  def all_users
+    @users = User.all
   end
 
   # GET /users
