@@ -1,24 +1,18 @@
-# README
+###Web search git
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Adeo Security staj başvuru projesi
 
-Things you may want to cover:
+###Projede Kullanılan Teknoloji ve Gem'ler
+⋅⋅* ruby 2.3.3
+⋅⋅* Rails 5.1.5
 
-* Ruby version
+⋅⋅* rest-client
+⋅⋅* bootstrap
+⋅⋅* jquery-rails
 
-* System dependencies
+###Setup Adımları
+1. bundle install
+2. rails db:create
+3. rails db:migrate
+4. rails s
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
