@@ -1,14 +1,14 @@
-###Web search git
+### Web search git
 
 Adeo Security staj başvuru projesi
 
-###Projede Kullanılan Teknoloji ve Gem'ler
-⋅⋅* ruby 2.3.3
-⋅⋅* Rails 5.1.5
+### Projede Kullanılan Teknoloji ve Gem'ler
+⋅⋅*ruby 2.3.3
+⋅⋅*Rails 5.1.5
 
-⋅⋅* rest-client
-⋅⋅* bootstrap
-⋅⋅* jquery-rails
+⋅⋅*rest-client
+⋅⋅*bootstrap
+⋅⋅*jquery-rails
 
 ###Setup Adımları
 1. bundle install
