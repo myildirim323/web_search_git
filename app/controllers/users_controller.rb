@@ -1,6 +1,22 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def find_user
+    name = params[:name]
+    response = RestClient.get('https://api.github.com/search/users?q='+name, headers={})
+    user = JSON.parse(response)
+    if user["total_total"] != 0
+      user = User.find_by(name: name)
+      if user
+        user.search_count +=1
+        user.save
+      else
+        User.create(name: name)
+      end
+    end
+    redirect_to users_path
+  end
+
   # GET /users
   # GET /users.json
   def index

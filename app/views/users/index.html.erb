@@ -2,6 +2,12 @@
 
 <h1>Users</h1>
 
+<%= form_tag("/find_user", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <table>
   <thead>
     <tr>
