@@ -1,6 +1,6 @@
 ### Web search git
 
-Adeo Security staj başvuru projesi
+Staj başvuru projesi
 
 ### Projede Kullanılan Teknoloji ve Gem'ler
 ⋅⋅*ruby 2.3.3
